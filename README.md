@@ -195,7 +195,7 @@ Add tests for new logic.
 
 Open a pull request with a clear description of changes.
 
-##@ Coding style. 
+### Coding style. 
 
 Keep JavaScript dependency free and modular.
 
