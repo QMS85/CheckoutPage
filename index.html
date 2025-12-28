@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Checkout</h1>
+
+  <section>
+    <h2>Your Cart</h2>
+    <figure>
+      <img
+        src="https://cdn.pixabay.com/photo/2016/11/29/03/53/cube-1869716_1280.jpg"
+        alt="Blue cube product"
+        width="200"
+        height="200"
+      />
+      <figcaption>1 × Blue cube</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Payment Information</h2>
+
+    <form id="payment-form" novalidate>
+      <div class="field">
+        <label for="card-name">
+          Cardholder Name <span aria-hidden="true">*</span>
+        </label>
+        <input id="card-name" name="card-name" type="text" required />
+        <div class="error" id="card-name-error" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="field">
+        <label for="card-number">
+          Card Number <span aria-hidden="true">*</span>
+        </label>
+
+        <div class="card-number-row">
+          <input
+            id="card-number"
+            name="card-number"
+            type="text"
+            inputmode="numeric"
+            autocomplete="cc-number"
+            aria-describedby="card-number-help card-number-error"
+            required
+            aria-label="Card number"
+            maxlength="19"
+            placeholder="#### #### #### ####"
+          />
+          <input id="card-number-raw" name="card-number-raw" type="hidden" />
+
+          <div class="card-brand" aria-hidden="true">
+            <div id="card-brand-icon" class="card-brand-icon" aria-hidden="true"></div>
+            <div id="card-brand-text" class="card-brand-text" aria-hidden="true">Card</div>
+
+            <button
+              id="brand-info"
+              type="button"
+              class="brand-info"
+              aria-describedby="brand-tooltip"
+              aria-label="Why brand detection matters"
+            >
+              ⓘ
+            </button>
+
+            <div id="brand-tooltip" role="tooltip" class="tooltip" hidden>
+              Brand detection helps prefill formatting, guide validation, and show supported payment options.
+            </div>
+          </div>
+        </div>
+
+        <p id="card-number-help">Enter the 16-digit card number with no spaces or dashes (e.g., 4242424242424242).</p>
+        <div class="error" id="card-number-error" aria-live="polite" hidden></div>
+
+        <div class="options">
+          <label class="option">
+            <input id="mask-toggle" type="checkbox" />
+            Mask card number
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="expiry">
+          Expiration Date <span aria-hidden="true">*</span>
+        </label>
+        <input
+          id="expiry"
+          name="expiry"
+          type="text"
+          inputmode="numeric"
+          placeholder="MM/YY"
+          aria-describedby="expiry-help expiry-error"
+          required
+        />
+        <p id="expiry-help" class="hint">Format MM/YY. Card must not be expired.</p>
+        <div class="error" id="expiry-error" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="field">
+        <label for="cvv">
+          CVV <span aria-hidden="true">*</span>
+        </label>
+        <input
+          id="cvv"
+          name="cvv"
+          type="text"
+          inputmode="numeric"
+          maxlength="4"
+          placeholder="123"
+          aria-describedby="cvv-help cvv-error"
+          required
+        />
+        <p id="cvv-help" class="hint">3 digits for most cards; 4 digits for American Express.</p>
+        <div class="error" id="cvv-error" aria-live="polite" hidden></div>
+      </div>
+
+      <button type="submit">Pay Now</button>
+    </form>
+  </section>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
