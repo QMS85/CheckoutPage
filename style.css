@@ -1,0 +1,123 @@
+:root{
+  --bg:#fff;
+  --text:#111;
+  --muted:#6b7280;
+  --error:#b00020;
+  --accent:#0b5fff;
+  --brand-size:44px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:var(--bg);
+  margin:0;
+  padding:24px;
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.45;
+}
+
+h1{font-size:1.6rem;margin:0 0 16px}
+section{margin-bottom:20px}
+h2{font-size:1.125rem;margin:0 0 12px}
+
+figure{margin:0 0 12px;display:flex;gap:12px;align-items:center}
+figcaption{color:var(--muted)}
+
+form{background:#f9fafb;padding:16px;border-radius:8px;border:1px solid #e6e9ee}
+.field{margin-bottom:14px}
+label{display:block;font-weight:600;margin-bottom:6px}
+input[type="text"], input[type="tel"], input[type="email"]{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #d1d5db;
+  border-radius:6px;
+  font-size:1rem;
+  background:#fff;
+}
+.card-number-row{display:flex;gap:8px;align-items:center}
+.card-number-row input[type="text"]{flex:1}
+
+/* Brand container */
+.card-brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left:8px;
+  min-width:120px;
+}
+.card-brand-icon{
+  width:var(--brand-size);
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.card-brand-text{
+  font-size:0.9rem;
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* Info button and tooltip */
+.brand-info{
+  background:transparent;
+  border:1px solid #e6e9ee;
+  border-radius:6px;
+  width:30px;
+  height:30px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  cursor:pointer;
+  font-size:0.9rem;
+}
+.brand-info:focus{outline:2px solid #cfe0ff; outline-offset:2px}
+
+.tooltip{
+  position:absolute;
+  background:#111;
+  color:#fff;
+  padding:8px 10px;
+  border-radius:6px;
+  font-size:0.9rem;
+  max-width:260px;
+  margin-top:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  z-index:20;
+}
+
+/* Positioning helper for tooltip (relative to brand container) */
+.card-number-row{position:relative}
+
+/* Hints and errors */
+.hint{color:var(--muted);font-size:0.9rem;margin:6px 0 0}
+.error{color:var(--error);font-size:0.95rem;margin-top:6px}
+
+/* Options and button */
+.options{margin-top:8px}
+.option{font-weight:500;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+button[type="submit"]{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+}
+button[type="submit"]:active{transform:translateY(1px)}
+.visually-hidden{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* Small responsive tweaks */
+@media (max-width:420px){
+  body{padding:16px}
+  .card-brand{min-width:100px}
+  .card-brand-icon{width:36px}
+  .tooltip{max-width:200px}
+    }
+      
