@@ -1,4 +1,4 @@
-# CheckoutPage
+# Checkout Page
 
 A complete, accessible, and secure front end demo for a checkout form with live card formatting, masking, brand detection, Luhn validation, expiry and CVV checks, and helpful accessibility features. This README explains the project structure, installation, usage, testing, accessibility considerations, security guidance, and contribution notes so you can copy, run, and extend the project quickly.  
 
